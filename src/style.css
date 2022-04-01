@@ -1,0 +1,60 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.objectOrbit {
+  position: absolute;
+  width: var(--orbit);
+  height: var(--orbit);
+  border-radius: 100%;
+}
+
+.star {
+  background: #f49e12;
+}
+
+.planet {
+  border: 1px solid #aaa;
+  animation: orbit var(--timing) linear infinite;
+}
+
+.planet::before {
+  position: absolute;
+  content: ' ';
+  background: var(--color);
+  display: block;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: -5px;
+  border-radius: 100%;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
